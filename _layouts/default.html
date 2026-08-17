@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <script>
+      (function () {
+        var saved = localStorage.getItem('dsh-docs-theme');
+        document.documentElement.dataset.theme = saved || 'dark';
+      }());
+    </script>
+    <link rel="icon" href="{{ '/assets/deepseek-logo.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  </head>
+  <body>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+    <header class="topbar" id="topbar">
+      <div class="topbar-inner">
+        <button class="icon-button menu-button" id="menu-button" type="button" aria-label="打开文档导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="返回首页">
+          <span class="brand-mark"><img src="{{ '/assets/deepseek-logo.svg' | relative_url }}" alt=""></span>
+          <span class="brand-copy">
+            <strong>DeepSeek Harness</strong>
+            <small>源码解构手册</small>
+          </span>
+          <span class="brand-tag">HARNESS</span>
+        </a>
+
+        <button class="quick-open" id="search-button" type="button" aria-haspopup="dialog">
+          <span class="search-glyph" aria-hidden="true"></span>
+          <span>快速跳转</span>
+          <kbd>⌘ K</kbd>
+        </button>
+
+        <div class="topbar-actions">
+          <span class="snapshot-badge" title="本文使用的上游源码快照">snapshot 47f9438</span>
+          <a class="github-link" href="https://github.com/hippone/deepseek-harness-deep-dive" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <button class="icon-button theme-button" id="theme-button" type="button" aria-label="切换深浅主题">
+            <span class="theme-sun" aria-hidden="true">☀</span>
+            <span class="theme-moon" aria-hidden="true">☾</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="sidebar" id="sidebar" aria-label="文档导航">
+        <div class="sidebar-scroll">
+          <nav class="docs-nav">
+            <section class="nav-section">
+              <h2>开始</h2>
+              <a class="nav-link{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}"><span>概览</span><small>00</small></a>
+              <a class="nav-link{% if page.url == '/executive-brief/' %} is-active{% endif %}" href="{{ '/executive-brief/' | relative_url }}"><span>技术决策摘要</span><small>Brief</small></a>
+              <a class="nav-link{% if page.url == '/outline/' %} is-active{% endif %}" href="{{ '/outline/' | relative_url }}"><span>目录</span><small>Map</small></a>
+            </section>
+
+            <section class="nav-section">
+              <h2>技术解析正文</h2>
+              <a class="nav-link nav-link-primary{% if page.url == '/deep-dive/' %} is-active{% endif %}" href="{{ '/deep-dive/' | relative_url }}"><span>完整正文</span><small>Read</small></a>
+              <div class="chapter-tree">
+                <a href="{{ '/deep-dive/#第一章-从最小-agent-loop-到-agent-运行时' | relative_url }}"><b>01</b><span>架构命题</span></a>
+                <a href="{{ '/deep-dive/#第二章-读懂-dsh-所需的-cordis-核心' | relative_url }}"><b>02</b><span>Cordis 核心</span></a>
+                <a href="{{ '/deep-dive/#第三章-profilebundle-与可检查的产品组装' | relative_url }}"><b>03</b><span>产品组装</span></a>
+                <a href="{{ '/deep-dive/#第四章-从输入到-idle默认-agent-执行链' | relative_url }}"><b>04</b><span>Agent 执行链</span></a>
+                <a href="{{ '/deep-dive/#第五章-会话事实与可回放状态' | relative_url }}"><b>05</b><span>会话事实</span></a>
+                <a href="{{ '/deep-dive/#第六章-可替换能力体系' | relative_url }}"><b>06</b><span>可替换能力</span></a>
+                <a href="{{ '/deep-dive/#第七章-自扩展与多端产品形态' | relative_url }}"><b>07</b><span>自扩展与多入口</span></a>
+                <a href="{{ '/deep-dive/#第八章-权限安全与信任边界' | relative_url }}"><b>08</b><span>权限与信任</span></a>
+                <a href="{{ '/deep-dive/#第九章-工程可信度与维护成本' | relative_url }}"><b>09</b><span>工程可信度</span></a>
+                <a href="{{ '/deep-dive/#第十章-dsh-在真实-agent-技术栈中的位置' | relative_url }}"><b>10</b><span>源码级比较</span></a>
+                <a href="{{ '/deep-dive/#第十一章-采用路线' | relative_url }}"><b>11</b><span>采用路线</span></a>
+                <a href="{{ '/deep-dive/#第十二章-结论' | relative_url }}"><b>12</b><span>结论</span></a>
+              </div>
+            </section>
+
+            <section class="nav-section">
+              <h2>附录与证据</h2>
+              <a class="nav-link{% if page.url == '/appendices/capability-map/' %} is-active{% endif %}" href="{{ '/appendices/capability-map/' | relative_url }}"><span>能力地图</span><small>A</small></a>
+              <a class="nav-link{% if page.url == '/appendices/event-and-lifecycle-map/' %} is-active{% endif %}" href="{{ '/appendices/event-and-lifecycle-map/' | relative_url }}"><span>事件与生命周期</span><small>B</small></a>
+              <a class="nav-link{% if page.url == '/appendices/adoption-checklist/' %} is-active{% endif %}" href="{{ '/appendices/adoption-checklist/' | relative_url }}"><span>采用检查表</span><small>C</small></a>
+              <a class="nav-link{% if page.url == '/appendices/sources-and-evidence/' %} is-active{% endif %}" href="{{ '/appendices/sources-and-evidence/' | relative_url }}"><span>资料与证据索引</span><small>D</small></a>
+            </section>
+          </nav>
+
+          <div class="sidebar-note">
+            <span class="status-dot"></span>
+            <div><strong>独立技术解析</strong><small>基于固定提交，不代表官方观点</small></div>
+          </div>
+        </div>
+      </aside>
+
+      <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="关闭文档导航"></button>
+
+      <main class="main-column" id="main-content">
+        <div class="content-meta">
+          <a href="{{ '/' | relative_url }}">DeepSeek Harness 解构</a><span>/</span><span>{{ page.title | default: '概览' }}</span>
+        </div>
+        <article class="doc-prose" data-doc-content>{{ content }}</article>
+        <footer class="doc-footer">
+          <p>基于固定提交 <code>47f9438</code> 的独立源码解析</p>
+          <div>
+            <a href="{{ '/appendices/sources-and-evidence/' | relative_url }}">核对证据</a>
+            <a href="https://github.com/hippone/deepseek-harness-deep-dive/issues" target="_blank" rel="noreferrer">反馈问题 ↗</a>
+          </div>
+        </footer>
+      </main>
+
+      <aside class="toc-panel" aria-label="本页目录">
+        <div class="toc-sticky"><p>本页目录</p><nav id="page-toc"></nav><a class="back-to-top" href="#main-content">返回顶部 ↑</a></div>
+      </aside>
+    </div>
+
+    <dialog class="search-dialog" id="search-dialog">
+      <div class="search-box">
+        <div class="search-input-row">
+          <span class="search-glyph" aria-hidden="true"></span>
+          <input id="search-input" type="search" placeholder="搜索页面或当前章节…" autocomplete="off" aria-label="搜索文档">
+          <kbd>ESC</kbd>
+        </div>
+        <div class="search-results" id="search-results"></div>
+        <div class="search-hint"><span>↑↓ 选择</span><span>↵ 打开</span><span>⌘K 关闭</span></div>
+      </div>
+    </dialog>
+
+    <script src="{{ '/assets/docs.js' | relative_url }}" defer></script>
+  </body>
+</html>

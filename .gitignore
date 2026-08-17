@@ -1,0 +1,5 @@
+/sources/
+/_site/
+# 本地写作文件：写作计划与写作规范，只放本地，不随仓库发布
+/OUTLINE.md
+/AGENTS.md

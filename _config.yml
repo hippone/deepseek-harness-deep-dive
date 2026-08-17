@@ -1,0 +1,33 @@
+title: DeepSeek Harness 解构
+description: 面向 Agent 平台与开发工具工程团队的源码级架构解析
+lang: zh-CN
+theme: minima
+url: https://hippone.github.io
+baseurl: /deepseek-harness-deep-dive
+
+header_pages:
+  - 00-outline.md
+  - 00-executive-brief.md
+  - 01-deep-dive.md
+  - appendices/A-capability-map.md
+  - appendices/B-event-and-lifecycle-map.md
+  - appendices/C-adoption-checklist.md
+  - appendices/D-sources-and-evidence.md
+
+exclude:
+  - AGENTS.md
+  - README.md
+  - README.zh.md
+  - OUTLINE.md
+  - sources
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+minima:
+  skin: auto
+  social_links:
+    - platform: github
+      user_url: https://github.com/hippone/deepseek-harness-deep-dive
