@@ -3,7 +3,7 @@ description: 面向 Agent 平台与开发工具工程团队的源码级架构解
 lang: zh-CN
 theme: minima
 url: https://hippone.github.io
-baseurl: /deepseek-harness-deep-dive
+baseurl: /deepseek-harness-internals
 
 header_pages:
   - 00-outline.md
@@ -15,19 +15,35 @@ header_pages:
   - appendices/D-sources-and-evidence.md
 
 exclude:
-  - AGENTS.md
-  - README.md
-  - README.zh.md
-  - OUTLINE.md
+  - deepseek-harness-promo
+  - deepseek-harness-motion-canvas
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - "*.log"
   - sources
 
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+author:
+  name: DeepSeek Harness 技术解析团队
+  email: ''
+  metadata:
+    github:
+      username: hippone
+      user_url: https://github.com/hippone/deepseek-harness-internals
 
 minima:
   skin: auto
   social_links:
     - platform: github
-      user_url: https://github.com/hippone/deepseek-harness-deep-dive
+      user_url: https://github.com/hippone/deepseek-harness-internals

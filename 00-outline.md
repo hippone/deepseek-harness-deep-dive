@@ -183,7 +183,7 @@ permalink: /outline/
 ## 交付结构
 
 ```text
-deepseek-harness-deep-dive/
+deepseek-harness-internals/
 ├── 00-executive-brief.md
 ├── 01-deep-dive.md
 ├── appendices/

@@ -18,7 +18,7 @@
 
 ## 在线阅读
 
-站点经 GitHub Pages 发布：<https://hippone.github.io/deepseek-harness-deep-dive/>
+站点经 GitHub Pages 发布：<https://hippone.github.io/deepseek-harness-internals/>
 
 ## 研究基线
 

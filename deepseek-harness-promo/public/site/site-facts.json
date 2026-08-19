@@ -1,0 +1,32 @@
+{
+  "title": "DeepSeek Harness源码解构手册",
+  "subtitle": "从 Cordis 生命周期、产品配置树一路追到 Agent Loop、会话事实和工具治理。面向需要评估、建设或接手 Agent 运行时的工程团队。",
+  "baseline": "47f943859bef",
+  "rail": [
+    "CordisOWNERSHIP",
+    "Product TreeASSEMBLY",
+    "Agent RuntimeEXECUTION",
+    "EvidenceADOPTION"
+  ],
+  "chapterLinks": [
+    "01架构命题",
+    "02Cordis 核心",
+    "03产品组装",
+    "04Agent 执行链",
+    "05会话事实",
+    "06可替换能力",
+    "07自扩展与多入口",
+    "08权限与信任",
+    "09工程可信度",
+    "10源码级比较",
+    "11采用路线",
+    "12结论"
+  ],
+  "colors": {
+    "background": "#0a0a0a",
+    "text": "#fff",
+    "description": "hsla(0, 0%, 100%, 0.5)",
+    "brand": "#6799fe",
+    "border": "hsla(0, 0%, 100%, 0.24)"
+  }
+}

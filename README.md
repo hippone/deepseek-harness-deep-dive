@@ -18,7 +18,7 @@ This repository is an independent technical writing project: it reads the pinned
 
 ## Read online
 
-The rendered site is published with GitHub Pages: <https://hippone.github.io/deepseek-harness-deep-dive/>
+The rendered site is published with GitHub Pages: <https://hippone.github.io/deepseek-harness-internals/>
 
 ## Research baseline
 
